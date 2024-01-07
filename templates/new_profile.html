@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 6{% endblock %}
+
+{% block main %}
+    <form method="POST">
+
+        <div class="center">
+            <label>
+                <input type="text" name="type_of_service" placeholder="type_of_service">Вид услуги
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                <input type="number" name="experience" placeholder="experience">Стаж
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                <input type="number" name="price" placeholder="price">Цена услуги
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                <input type="text" name="about_me" placeholder="about_me">О себе (не обязательно)
+            </label>
+        </div><br>
+
+
+        <div class='errors1'>{{ errors }}</div>
+
+        <input type="submit" value="Apply" class="blok2">
+    </form>
+{% endblock %} 

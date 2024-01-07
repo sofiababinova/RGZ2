@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <form method="POST">
+        <h1 class="center">Страница авторизации</h1>
+
+        <div class="center">
+            <label>
+                <input type="text" name="username" placeholder="username">Логин
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                <input type="text" name="password" placeholder="password">Пароль
+            </label>
+        </div><br>
+
+        <button type="submit" class="blok3">Авторизироваться</button><br>
+
+        <div class='errors1'>{{ errors }}</div>
+    </form>
+{% endblock %}  

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>Профиль {{ username_form }}: </h1>
+    <div>{{ type_of_service }}</div>
+    <div>{{ experience }}</div>
+    <div>{{ price }}</div>
+    <div>{{ about_me }}</div>
+
+    <form method="POST" action="/rgz1/edit">
+        <div class="center">
+            <label>
+                <input type="text" name="type_of_service" placeholder="type_of_service">Вид услуги
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                <input type="number" name="experience" placeholder="experience">Стаж
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                <input type="number" name="price" placeholder="price">Цена услуги
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                <input type="text" name="about_me" placeholder="about_me">О себе (не обязательно)
+            </label>
+        </div><br>
+
+        <input type="submit" value="Сохранить" class="blok2">
+    </form>
+
+    <form method="POST" action="/rgz1/delete">
+        <input type="submit" value="Удалить аккаунт" class="blok2">
+    </form>
+{% endblock %}
