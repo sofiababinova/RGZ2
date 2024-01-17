@@ -1,0 +1,220 @@
+header {
+    background-color: rgb(255, 215, 192); 
+    color: rgb(216, 104, 43); 
+    padding: 15px; 
+    font-size: 16pt;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 10%;
+}
+
+footer {
+    background-color: rgb(255, 215, 192); 
+    color: rgb(216, 104, 43); 
+    padding: 15px;
+    font-size: 13pt; 
+    font-style: italic; 
+    text-align: right;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 98%;
+}
+
+.zag {
+    color: rgb(216, 104, 43); 
+    position: relative;
+    left: 450px;
+    font-size: 20pt;
+}
+
+.r1 {
+    background-color: white;
+    color: rgb(216, 104, 43);
+    font-size: 16pt;
+    position: absolute;
+    left: 15px;
+    top: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(216, 104, 43);
+}
+
+a.r11 {
+    text-decoration: none;
+    color: rgb(216, 104, 43); 
+}
+
+.r2 {
+    background-color: white;
+    color: rgb(216, 104, 43);
+    font-size: 16pt;
+    position: absolute;
+    left: 285px;
+    top: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(216, 104, 43);
+}
+
+a.r22 {
+    text-decoration: none;
+    color: rgb(216, 104, 43); 
+}
+
+.r3 {
+    background-color: white;
+    color: rgb(216, 104, 43);
+    font-size: 16pt;
+    position: absolute;
+    left: 465px;
+    top: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(216, 104, 43);
+}
+
+a.r33 {
+    text-decoration: none;
+    color: rgb(216, 104, 43); 
+}
+
+.r4 {
+    background-color: rgb(216, 104, 43);
+    color: white;
+    font-size: 16pt;
+    position: absolute;
+    left: 900px;
+    top: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(216, 104, 43);
+}
+
+a.r44 {
+    text-decoration: none;
+    color: white;
+}
+
+.r5 {
+    background-color: white;
+    color: rgb(216, 104, 43);
+    font-size: 16pt;
+    position: absolute;
+    left: 1050px;
+    top: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(216, 104, 43);
+}
+
+a.r55 {
+    text-decoration: none;
+    color: rgb(216, 104, 43); 
+}
+
+.r6 {
+    background-color: white;
+    color: rgb(216, 104, 43);
+    font-size: 16pt;
+    position: absolute;
+    left: 1140px;
+    top: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(216, 104, 43);
+}
+
+a.r66 {
+    text-decoration: none;
+    color: rgb(216, 104, 43); 
+}
+
+.r7 {
+    color: rgb(216, 104, 43); 
+    font-size: 16pt;
+    position: absolute;
+    left: 1240px;
+    top: 65px;
+}
+
+.pusto {
+    height: 100px;
+}
+
+.pusto2 {
+    height: 30px;
+}
+
+.center {
+    position: relative;
+    left: 480px;
+}
+
+.center1 {
+    position: relative;
+    left: 550px;
+}
+
+.center2 {
+    position: relative;
+    left: 600px;
+}
+
+.center3 {
+    position: relative;
+    left: 450px;
+}
+
+.center4 {
+    position: relative;
+    left: 650px;
+}
+
+.center5 {
+    position: relative;
+    left: 590px;
+}
+
+.errors {
+    color: red;
+    font-weight: bold;
+    position: relative;
+    left: 530px;
+}
+
+body {
+    background-color: rgb(255, 231, 218); 
+    color: rgb(216, 104, 43);
+}
+
+#kn {
+    color: rgb(216, 104, 43);
+}
+
+#type_of_service {
+    color: rgb(216, 104, 43);
+}
+
+#experience_from {
+    color: rgb(216, 104, 43);
+}
+
+#experience_to {
+    color: rgb(216, 104, 43);
+}
+
+#price_from {
+    color: rgb(216, 104, 43);
+}
+
+#price_to {
+    color: rgb(216, 104, 43);
+}
+
+.i {
+    position: relative;
+    left: 15px;
+}

@@ -1,37 +1,39 @@
 {% extends "base.html" %}
 
-{% block lab %}Лабораторная работа 6{% endblock %}
+{% block header %}
+    <div class="r1"><a href="/rgz1/" class="r11">Главная страница</a></div>
+{% endblock %}
 
 {% block main %}
+    <div class="pusto"></div>
     <form method="POST">
-
+        <h1 class="center1">Cоздание профиля</h1>
         <div class="center">
             <label>
-                <input type="text" name="type_of_service" placeholder="type_of_service">Вид услуги
+                <input type="text" name="type_of_service" placeholder="Услуга" id="kn">Вид услуги
             </label>
         </div><br>
 
         <div class="center">
             <label>
-                <input type="number" name="experience" placeholder="experience">Стаж
+                <input type="number" name="experience" placeholder="Стаж" id="kn">Стаж
             </label>
         </div><br>
 
         <div class="center">
             <label>
-                <input type="number" name="price" placeholder="price">Цена услуги
+                <input type="number" name="price" placeholder="Цена" id="kn">Цена услуги
             </label>
         </div><br>
 
         <div class="center">
             <label>
-                <input type="text" name="about_me" placeholder="about_me">О себе (не обязательно)
+                <input type="text" name="about_me" placeholder="О себе" id="kn">О себе (не обязательно)
             </label>
         </div><br>
 
+        <input type="submit" value="Cоздать резюме" class="center2" id="kn"><br><br>
 
-        <div class='errors1'>{{ errors }}</div>
-
-        <input type="submit" value="Apply" class="blok2">
+        <div class='errors'>{{ errors }}</div><br>
     </form>
 {% endblock %} 

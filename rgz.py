@@ -7,15 +7,21 @@ from sqlalchemy import or_, and_
 from sqlalchemy.orm import defer
 from sqlalchemy import cast
 from sqlalchemy import Integer
+from sqlalchemy import join
 
 rgz1 = Blueprint ("rgz1", __name__)
 
 
 @rgz1.route('/rgz1/')
 def rgz():
-    visibleuser = 'Anon'
 
-    return render_template('str1.html', username_form=visibleuser)
+    if current_user.is_authenticated:
+        username_form = current_user.username
+    else:
+        username_form = "Anon"
+
+
+    return render_template('str1.html', username_form=username_form)
 
 
 @rgz1.route("/rgz1/register", methods=["GET", "POST"])
@@ -155,7 +161,15 @@ def edit():
 
     my_profile = profile.query.filter_by(user_id=current_user.id).all()
 
-    
+    if type_of_service == "":
+        type_of_service = my_profile[0].type_of_service
+    if experience == "":
+        experience = my_profile[0].experience
+    if price == "":
+        price = my_profile[0].price
+    if about_me == "":
+        about_me = my_profile[0].about_me
+
     if my_profile:
         my_profile[0].type_of_service = type_of_service
         my_profile[0].experience = experience
@@ -194,6 +208,7 @@ def search():
         price_from = request.form.get('price_from', type=float)
         price_to = request.form.get('price_to', type=float)
 
+
         # Построение условий поиска
         conditions = []
         if type_of_service:
@@ -206,11 +221,50 @@ def search():
             conditions.append(profile.price >= price_from)
         if price_to is not None:
             conditions.append(profile.price <= price_to)
+        
+        # Добавление условия показа страницы
+        conditions.append(profile.is_public == True)
 
-        # Выполнение запроса в базе данных
+
+        # Выполнение запроса в базе данных с использованием смещения
         profiles = profile.query.filter(and_(*conditions)).options(defer(profile.type_of_service), defer(profile.experience), defer(profile.price)).all()
+        userss = users.query.filter(and_(*conditions)).options(defer(users.username)).all()
 
-        return render_template('search.html', profiles=profiles)
+        # Увеличение смещения для следующего запроса
+
+        data = {
+        'profiles': profiles,
+        'users': userss,
+        }
+
+
+        return render_template('search.html', data=data)
 
     # Если метод GET, вернуть пустую страницу для отображения формы поиска
-    return render_template('search.html')
+    data = {}
+    return render_template('search.html', data=data)
+
+
+@rgz1.route('/rgz1/hide', methods=["POST"])
+@login_required
+def hide():
+
+
+    if request.method == "POST":
+        is_public = request.form.get("is_public")
+
+    my_profile = profile.query.filter_by(user_id=current_user.id).all()
+    
+    type_of_service = my_profile[0].type_of_service
+    experience = my_profile[0].experience
+    price = my_profile[0].price
+    about_me = my_profile[0].about_me
+
+    if my_profile[0].is_public:
+        my_profile[0].is_public = False
+        db.session.commit()
+    else:
+        my_profile[0].is_public = True
+        db.session.commit()
+
+    return render_template('profile.html', type_of_service=type_of_service, experience=experience, price=price, about_me=about_me, is_public=is_public)

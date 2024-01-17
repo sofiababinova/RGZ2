@@ -1,23 +1,28 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <div class="r1"><a href="/rgz1/" class="r11">Главная страница</a></div>
+{% endblock %}
+
 {% block main %}
+    <div class="pusto"></div>
     <form method="POST">
         <h1 class="center">Страница авторизации</h1>
 
-        <div class="center">
+        <div class="center1">
             <label>
-                <input type="text" name="username" placeholder="username">Логин
+                <input type="text" name="username" placeholder="Логин" id="kn"> Логин
             </label>
         </div><br>
 
-        <div class="center">
+        <div class="center1">
             <label>
-                <input type="text" name="password" placeholder="password">Пароль
+                <input type="password" name="password" placeholder="Пароль" id="kn"> Пароль
             </label>
         </div><br>
 
-        <button type="submit" class="blok3">Авторизироваться</button><br>
+        <button type="submit" class="center2" id="kn">Авторизироваться</button><br><br>
 
-        <div class='errors1'>{{ errors }}</div>
+        <div class='errors'>{{ errors }}</div>
     </form>
 {% endblock %}  

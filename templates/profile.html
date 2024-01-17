@@ -1,41 +1,54 @@
 {% extends "base.html" %}
 
+{% block header %}
+    <div class="r1"><a href="/rgz1/" class="r11">Главная страница</a></div>
+{% endblock %}
+
 {% block main %}
-    <h1>Профиль {{ username_form }}: </h1>
-    <div>{{ type_of_service }}</div>
-    <div>{{ experience }}</div>
-    <div>{{ price }}</div>
-    <div>{{ about_me }}</div>
+    <div class="pusto"></div>
+    <h1 class="center1">Профиль</h1>
+    <div class="center">
+        <div>Вид услуги: {{ type_of_service }}</div>
+        <div>Стаж: {{ experience }}</div>
+        <div>Цена услуги: {{ price }}</div>
+        <div>О себе: {{ about_me }}</div><br>
+    </div>
 
-    <form method="POST" action="/rgz1/edit">
-        <div class="center">
-            <label>
-                <input type="text" name="type_of_service" placeholder="type_of_service">Вид услуги
-            </label>
-        </div><br>
-
-        <div class="center">
-            <label>
-                <input type="number" name="experience" placeholder="experience">Стаж
-            </label>
-        </div><br>
-
-        <div class="center">
-            <label>
-                <input type="number" name="price" placeholder="price">Цена услуги
-            </label>
-        </div><br>
-
-        <div class="center">
-            <label>
-                <input type="text" name="about_me" placeholder="about_me">О себе (не обязательно)
-            </label>
-        </div><br>
-
-        <input type="submit" value="Сохранить" class="blok2">
-    </form>
+    <form method="POST" action="/rgz1/hide">
+        <div class="center">Скрыть профиль: <input type="checkbox" value="Скрыть профиль" id="kn"> - 
+        <input type="submit" value="Изменить состояние профиля профиль" id="kn"></div>
+    </form><br>
 
     <form method="POST" action="/rgz1/delete">
-        <input type="submit" value="Удалить аккаунт" class="blok2">
+        <input type="submit" value="Удалить аккаунт" class="center5" id="kn">
+    </form>
+
+    <form method="POST" action="/rgz1/edit">
+        <h1 class="center3">Редактирование профиля</h1>
+        <div class="center">
+            <label>
+                Вид услуги: <input type="text" name="type_of_service" placeholder="Услуга" id="kn">
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                Стаж: <input type="number" name="experience" placeholder="Стаж" id="kn">
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                Цена услуги: <input type="number" name="price" placeholder="Цена" id="kn">
+            </label>
+        </div><br>
+
+        <div class="center">
+            <label>
+                О себе (не обязательно): <input type="text" name="about_me" placeholder="О себе" id="kn">
+            </label>
+        </div><br>
+
+        <input type="submit" value="Сохранить" class="center2" id="kn">
     </form>
 {% endblock %}
